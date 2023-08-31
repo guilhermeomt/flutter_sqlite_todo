@@ -18,4 +18,27 @@ class Todo {
     this.done = false,
     required this.created,
   });
+
+  Map<String, Object?> toJson() => {
+        TodoFields.username: username,
+        TodoFields.title: title,
+        TodoFields.done: done ? 1 : 0,
+        TodoFields.created: created.toIso8601String(),
+      };
+
+  static Todo fromJson(Map<String, Object?> json) => Todo(
+        username: json[TodoFields.username] as String,
+        title: json[TodoFields.title] as String,
+        done: json[TodoFields.done] == 1,
+        created: DateTime.parse(json[TodoFields.created] as String),
+      );
+
+  @override
+  bool operator ==(covariant Todo other) {
+    return (username == other.username) &&
+        (title.toUpperCase().compareTo(other.title.toUpperCase()) == 0);
+  }
+
+  @override
+  int get hashCode => Object.hash(username, title);
 }
