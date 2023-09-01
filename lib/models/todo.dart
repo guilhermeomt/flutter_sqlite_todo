@@ -1,3 +1,5 @@
+const String todoTable = 'todo';
+
 class TodoFields {
   static const String username = 'username';
   static const String title = 'title';
