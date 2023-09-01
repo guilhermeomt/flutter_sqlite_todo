@@ -13,22 +13,18 @@ class TodoDatabase {
     const textType = "TEXT NOT NULL";
     const boolType = "BOOLEAN NOT NULL";
 
-    await db.execute('''
-      CREATE TABLE $userTable (
+    await db.execute('''CREATE TABLE $userTable (
         ${UserFields.username} $userUsernameType,
-        ${UserFields.name} $textType,
-      );
-    ''');
+        ${UserFields.name} $textType
+      )''');
 
-    await db.execute('''
-    CREATE TABLE $todoTable (
-      ${TodoFields.username} $userUsernameType,
+    await db.execute('''CREATE TABLE $todoTable (
+      ${TodoFields.username} $textType,
       ${TodoFields.title} $textType,
       ${TodoFields.done} $boolType,
       ${TodoFields.created} $textType,
-      FOREIGN KEY ${TodoFields.username} REFERENCES $userTable (${UserFields.username})
-    );
-    ''');
+      FOREIGN KEY (${TodoFields.username}) REFERENCES $userTable (${UserFields.username})
+    )''');
   }
 
   Future _onConfigure(Database db) async {
