@@ -1,16 +1,3 @@
-# flutter_sqlite_todo
+This repo is a simple ToDo app developed with Flutter, utilizing SQLite for data storage. The app allows users to create, delete, and mark tasks as completed. It also offers user registration and login functionality using a unique username.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The project was crafted following [Johan Jurrius' course](https://www.youtube.com/watch?v=dCH74M2rSeI&list=PLfNDfEpg5eOOxE6arbfrloHtieJ4aSY9v&index=28) with a few tweaks.
